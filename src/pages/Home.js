@@ -9,7 +9,7 @@ function HomePage(){
             <h1 className={classes.h1}>Welcome to your car catalog!</h1>
 
             <div className={classes.image}>
-                <img src={testPic} alt={"Car catalog"}/>
+                <img className={classes.img} src={testPic} alt={"Car catalog"}/>
             </div>
         </div>
 

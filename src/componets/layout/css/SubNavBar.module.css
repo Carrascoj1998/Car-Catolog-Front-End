@@ -1,21 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i");
 .header {
     width: 100%;
     height: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #003049;
+    background-color: tan;
     padding: 0 10%;
 }
 
-.logo {
-    font-size: 3rem;
-    color: white;
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-
-}
 
 .header ul {
     list-style: none;
@@ -26,7 +18,7 @@
 }
 
 .header li {
-    margin-left: 3rem;
+    margin-left: 18rem;
 }
 
 .header a {
@@ -39,12 +31,4 @@
 .header a:active,
 .header a.active {
     color: white;
-}
-
-.badge {
-    background-color: #cc2062;
-    color: white;
-    border-radius: 12px;
-    padding: 0 1rem;
-    margin-left: 0.5rem;
 }

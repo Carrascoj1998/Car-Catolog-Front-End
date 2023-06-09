@@ -11,7 +11,7 @@ function MainNavBar(){
                         <Link to={"/"}>Home</Link>
                     </li>
                     <li>
-                        <Link to={"/vehicles"}>Vehicles</Link>
+                        <Link to={"/addVehicles"}>Vehicles</Link>
                     </li>
                     <li>
                         <Link to={"/favorites"}>Favorites</Link>

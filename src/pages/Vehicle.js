@@ -1,7 +1,16 @@
+import SubNavBar from "../componets/layout/SubNavBar";
+
+
 
 
 function VehiclesPage(){
-    return <div>Vehicles Page And NavBar</div>;
+
+
+    return (
+        <SubNavBar />
+
+    );
+
 }
 
 export default VehiclesPage;
