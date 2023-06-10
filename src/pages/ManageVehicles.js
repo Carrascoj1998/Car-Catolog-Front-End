@@ -26,8 +26,11 @@ function ManageVehiclesPage(){
     return(
         <div>
              <SubNavBar />
-
-            
+            <ul>
+                {DUMMY_DATA.map((vehicle) => {
+                    return <li key={vehicle.id}>{vehicle.year}</li>
+                })}
+            </ul>
         </div>
     );
 }
