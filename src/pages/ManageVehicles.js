@@ -1,5 +1,6 @@
 import SubNavBar from "../componets/layout/SubNavBar";
 import VehicleList from "../componets/Vehicles/VehicleList";
+import classes from "./css/ManageVehicle.module.css";
 
 const DUMMY_DATA=[
     {
@@ -28,7 +29,7 @@ function ManageVehiclesPage(){
         <div>
              <SubNavBar />
 
-            <h1>Manage Vehicles</h1>
+            <h1 className={classes.h1}>Manage Vehicles</h1>
 
             <section>
                 <VehicleList vehicles={DUMMY_DATA} />
