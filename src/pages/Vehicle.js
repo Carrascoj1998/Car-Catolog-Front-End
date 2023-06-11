@@ -1,10 +1,13 @@
 import SubNavBar from "../componets/layout/SubNavBar";
-import classes from "./css/Pages.module.css";
-import testPic from "../images/react-pic.jpg";
 import NewVehicleForm from "../componets/Vehicles/NewVehicleForm";
-
+import classes from "./css/Vehicles.module.css";
 
 function VehiclesPage(){
+    function addVehicleHandler(vehicleData){
+
+
+
+    }
 
 
     return (
@@ -13,8 +16,8 @@ function VehiclesPage(){
             <SubNavBar />
 
             <section>
-                <h1>Add New Vehicle</h1>
-                <NewVehicleForm />
+                <h1 className={classes.h1}>Add New Vehicle</h1>
+                <NewVehicleForm onAddVehicle={addVehicleHandler}/>
             </section>
         </div>
 
