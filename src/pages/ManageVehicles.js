@@ -1,4 +1,5 @@
 import SubNavBar from "../componets/layout/SubNavBar";
+import VehicleList from "../componets/Vehicles/VehicleList";
 
 const DUMMY_DATA=[
     {
@@ -13,11 +14,11 @@ const DUMMY_DATA=[
     },
     {
         id: 'm1',
-        year: "2020",
-        make: "BWM",
-        model: "M6",
+        year: "2023",
+        make: "Kia",
+        model: "Forte",
         color: "Black",
-        vin: "ABCDEF123456"
+        vin: "ASDFER2345F"
     }
 ];
 
@@ -26,11 +27,12 @@ function ManageVehiclesPage(){
     return(
         <div>
              <SubNavBar />
-            <ul>
-                {DUMMY_DATA.map((vehicle) => {
-                    return <li key={vehicle.id}>{vehicle.year}</li>
-                })}
-            </ul>
+
+            <h1>Manage Vehicles</h1>
+
+            <section>
+                <VehicleList vehicles={DUMMY_DATA} />
+            </section>
         </div>
     );
 }
