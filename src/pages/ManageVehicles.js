@@ -1,5 +1,5 @@
 import SubNavBar from "../componets/layout/SubNavBar";
-import VehicleList from "../componets/Vehicles/VehicleList";
+import VehicleList from "../componets/vehicles/VehicleList";
 import classes from "./css/ManageVehicle.module.css";
 
 const DUMMY_DATA=[

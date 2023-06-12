@@ -1,5 +1,5 @@
 import classes from "./css/VehicleList.module.css";
-import vehicle from "../../pages/Vehicle";
+
 import VehicleItem from "./VehicleItem";
 function VehicleList(props){
 

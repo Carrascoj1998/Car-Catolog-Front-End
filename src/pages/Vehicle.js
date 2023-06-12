@@ -1,5 +1,5 @@
 import SubNavBar from "../componets/layout/SubNavBar";
-import NewVehicleForm from "../componets/Vehicles/NewVehicleForm";
+import NewVehicleForm from "../componets/vehicles/NewVehicleForm";
 import classes from "./css/Vehicles.module.css";
 
 function VehiclesPage(){
@@ -15,27 +15,27 @@ function VehiclesPage(){
             }
         );
 
-        fetch(
-            "http://localhost:8080/vehicleMake/",
-            {
-                method:"POST",
-                body: JSON.stringify(vehicleData),
-                headers: {
-                    "Content-Type": "application.json"
-                }
-            }
-        );
-
-        fetch(
-            "http://localhost:8080/vehicleModel/",
-            {
-                method:"POST",
-                body: JSON.stringify(vehicleData),
-                headers: {
-                    "Content-Type": "application.json"
-                }
-            }
-        );
+        // fetch(
+        //     "http://localhost:8080/vehicleMake/",
+        //     {
+        //         method:"POST",
+        //         body: JSON.stringify(vehicleData),
+        //         headers: {
+        //             "Content-Type": "application.json"
+        //         }
+        //     }
+        // );
+        //
+        // fetch(
+        //     "http://localhost:8080/vehicleModel/",
+        //     {
+        //         method:"POST",
+        //         body: JSON.stringify(vehicleData),
+        //         headers: {
+        //             "Content-Type": "application.json"
+        //         }
+        //     }
+        // );
 
     }
 
