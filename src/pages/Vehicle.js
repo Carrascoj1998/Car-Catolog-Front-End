@@ -4,8 +4,38 @@ import classes from "./css/Vehicles.module.css";
 
 function VehiclesPage(){
     function addVehicleHandler(vehicleData){
+        fetch(
+            "http://localhost:8080/vehicle/",
+            {
+                method:"POST",
+                body: JSON.stringify(vehicleData),
+                headers: {
+                    "Content-Type": "application.json"
+                }
+            }
+        );
 
+        fetch(
+            "http://localhost:8080/vehicleMake/",
+            {
+                method:"POST",
+                body: JSON.stringify(vehicleData),
+                headers: {
+                    "Content-Type": "application.json"
+                }
+            }
+        );
 
+        fetch(
+            "http://localhost:8080/vehicleModel/",
+            {
+                method:"POST",
+                body: JSON.stringify(vehicleData),
+                headers: {
+                    "Content-Type": "application.json"
+                }
+            }
+        );
 
     }
 
