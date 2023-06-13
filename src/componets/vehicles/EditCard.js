@@ -38,7 +38,7 @@ function EditCard(props) {
             props.onEditSubmit(props.vehicle.id, editedVehicle);
 
             // Redirect to a different page after successful submission
-            navigate("/manageVehicles");
+            navigate("/");
         } catch (error) {
             console.log("Error updating vehicle:", error);
         }
