@@ -1,8 +1,4 @@
-.item {
-    margin: 1rem 0;
 
-
-}
 
 .content {
     display: flex;
@@ -18,23 +14,11 @@
 
 
 
-.content h3 {
-    font-size: 1.00rem;
-    color: #2c292b;
-    margin: 0.5rem 0;
-}
-
-.content h2 {
-    font-size: 1.25rem;
-    margin: 0.5rem 0;
-
-}
-
 .p{
     font-size: 1.25rem;
     color: #2c292b;
     margin: 0.5rem 0;
-    border-bottom: solid tan ;
+
 
 }
 

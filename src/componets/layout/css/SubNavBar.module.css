@@ -3,7 +3,7 @@
     height: 5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: tan;
     padding: 0 10%;
 }
@@ -24,11 +24,18 @@
 .header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color:  whitesmoke;
+    color: whitesmoke;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
     color: white;
+}
+
+.li{
+
 }

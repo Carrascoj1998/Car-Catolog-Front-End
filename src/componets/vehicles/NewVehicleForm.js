@@ -1,11 +1,12 @@
-import {useRef} from "react";
+import React, { useRef, useState } from "react";
 import Card from "../ui/Card";
 import classes from "./css/NewVehicleForm.module.css";
 
-function NewVehicleForm (props){
+function NewVehicleForm(props) {
 
     const yearInputRef = useRef();
     const makeInputRef = useRef();
+    const purchasePriceInputRef =useRef();
     const modelInputRef= useRef();
     const colorInputRef= useRef();
     const vinInputRef  = useRef();
@@ -16,17 +17,21 @@ function NewVehicleForm (props){
 
         const enteredYear = yearInputRef.current.value;
         const enteredMake = makeInputRef.current.value;
+        const enteredPurchasePrice = purchasePriceInputRef.current.value;
         const enteredModel = modelInputRef.current.value;
         const enteredColor = colorInputRef.current.value;
         const enteredVin = vinInputRef.current.value;
 
-        const vehicleData ={
+
+        const vehicleData = {
             year: enteredYear,
-            make: enteredMake,
-            model: enteredModel,
+            make: { name: enteredMake }, // Modify this line
+            purchasePrice: enteredPurchasePrice,
+            model: { name: enteredModel }, // Modify this line
             color: enteredColor,
             vin: enteredVin,
         };
+
 
         props.onAddVehicle(vehicleData);
 
@@ -39,6 +44,10 @@ function NewVehicleForm (props){
                 <div className={classes.control}>
                     <label htmlFor="year">Year</label>
                     <input type="text" required id="year" ref={yearInputRef} />
+                </div>
+                <div className={classes.control}>
+                    <label htmlFor="purchasePrice">Purchase Price</label>
+                    <input type="text" required id="purchasePrice" ref={purchasePriceInputRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="make">Make</label>
