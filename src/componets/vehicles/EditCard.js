@@ -8,8 +8,8 @@ function EditCard(props) {
 
     const [editedVehicle, setEditedVehicle] = useState({
         year: props.vehicle.year,
-        make: props.vehicle.make,
-        model: props.vehicle.model,
+        // make: props.vehicle.make,
+        // model: props.vehicle.model,
         color: props.vehicle.color,
         vin: props.vehicle.vin,
         purchasePrice: props.vehicle.purchasePrice,
@@ -95,26 +95,26 @@ function EditCard(props) {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className={classes.p}>
-                        <label htmlFor="make">Make: </label>
-                        <input
-                            type="text"
-                            id="make"
-                            name="make"
-                            value={editedVehicle.make}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                    <div className={classes.p}>
-                        <label htmlFor="model">Model: </label>
-                        <input className={classes.input}
-                            type="text"
-                            id="model"
-                            name="model"
-                            value={editedVehicle.model}
-                            onChange={handleInputChange}
-                        />
-                    </div>
+                    {/*<div className={classes.p}>*/}
+                    {/*    <label htmlFor="make">Make: </label>*/}
+                    {/*    <input*/}
+                    {/*        type="text"*/}
+                    {/*        id="make"*/}
+                    {/*        name="make"*/}
+                    {/*        value={editedVehicle.make}*/}
+                    {/*        onChange={handleInputChange}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                    {/*<div className={classes.p}>*/}
+                    {/*    <label htmlFor="model">Model: </label>*/}
+                    {/*    <input className={classes.input}*/}
+                    {/*        type="text"*/}
+                    {/*        id="model"*/}
+                    {/*        name="model"*/}
+                    {/*        value={editedVehicle.model}*/}
+                    {/*        onChange={handleInputChange}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                     <div className={classes.p}>
                         <label htmlFor="color">Color: </label>
                         <input
@@ -146,10 +146,10 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.actions}>
-                        <button type="button" onClick={saveHandler}>Save</button>
+                        <button type="submit" onClick={saveHandler}>Save</button>
                     </div>
                     <div className={classes.actions}>
-                        <button type="button" onClick={handleDelete}>Delete</button>
+                        <button type="submit" onClick={handleDelete}>Delete</button>
                     </div>
                 </form>
             </div>
