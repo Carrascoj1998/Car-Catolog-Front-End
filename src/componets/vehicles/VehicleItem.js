@@ -1,30 +1,27 @@
+import { useContext, useState } from "react";
 import classes from "./css/VehicleItem.module.css";
-import {useContext} from "react";
-import React, { useState } from "react";
+
 import Card from "../ui/Card";
 import FavoritesContext from "../../store/favorites-context";
 import EditCard from "./EditCard";
 
-
-
-
 function VehicleItem(props) {
     const favoritesCtx = useContext(FavoritesContext);
-    const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
+    const isItemFavorite = favoritesCtx.itemIsFavorite(props.id);
     const [isEditMode, setIsEditMode] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(isItemFavorite); // Maintain favorite status per item
+
     const toggleEditMode = () => {
         setIsEditMode((prevEditMode) => !prevEditMode);
     };
 
     const handleEditSubmit = (id, editedVehicle) => {
-        // Handle the edit submission and update vehicle data
         console.log("Edit submitted for ID:", id);
         console.log("Edited vehicle data:", editedVehicle);
-        // Perform necessary actions, such as updating state or making API calls
     };
 
-    function toggleFavoriteStatusHandler() {
-        if (itemIsFavorite) {
+    const toggleFavoriteStatusHandler = () => {
+        if (isFavorite) {
             favoritesCtx.removeFavorites(props.id);
         } else {
             favoritesCtx.addFavorites({
@@ -37,7 +34,8 @@ function VehicleItem(props) {
                 purchasePrice: props.purchasePrice,
             });
         }
-    }
+        setIsFavorite((prevIsFavorite) => !prevIsFavorite); // Update favorite status of the item
+    };
 
     return (
         <li className={classes.item}>
@@ -47,6 +45,7 @@ function VehicleItem(props) {
                 <Card>
                     <div className={classes.content}>
                         <div className={classes.info}>
+                            {/*<p className={classes.p}>{props.id}</p>*/}
                             <p className={classes.p}>Year: {props.year}</p>
                             <p className={classes.p}>Make: {props.make}</p>
                             <p className={classes.p}>Model: {props.model}</p>
@@ -59,7 +58,7 @@ function VehicleItem(props) {
                         </div>
                         <div className={classes.actions}>
                             <button onClick={toggleFavoriteStatusHandler}>
-                                {itemIsFavorite ? "Remove From Favorites" : "To Favorites"}
+                                {isFavorite ? "Remove From Favorites" : "To Favorites"}
                             </button>
                         </div>
                     </div>
@@ -68,7 +67,5 @@ function VehicleItem(props) {
         </li>
     );
 }
-
-
 
 export default VehicleItem;

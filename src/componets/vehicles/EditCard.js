@@ -27,7 +27,7 @@ function EditCard(props) {
         event.preventDefault();
 
         try {
-            await fetch(`http://localhost:8080/vehicle/${props.vehicle.id}`, {
+            await fetch(`http://localhost:8080/vehicle/${props.vehicle.vin}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -35,27 +35,45 @@ function EditCard(props) {
                 body: JSON.stringify(editedVehicle),
             });
 
-            props.onEditSubmit(props.vehicle.id, editedVehicle);
+            props.onEditSubmit(props.vehicle.vin, editedVehicle);
 
             // Redirect to a different page after successful submission
-            navigate("/");
+            navigate("/manageVehicles");
+            window.location.reload();
+
+
+
         } catch (error) {
             console.log("Error updating vehicle:", error);
         }
     };
+
+    const saveHandler = async ()=>{
+        navigate("/manageVehicles");
+        window.location.reload();
+
+    }
 
     const handleDelete = async () => {
         const confirmDelete = window.confirm(
             "Are you sure you want to delete this vehicle?"
         );
 
+        console.log(props);
         if (confirmDelete) {
             try {
-                await fetch(`http://localhost:8080/vehicle/${props.vehicle.id}`, {
+                await fetch(`http://localhost:8080/vehicle/${props.vehicle.vin}`, {
+
                     method: "DELETE",
+
                 });
 
+                console.log(  "deleted");
                 navigate("/manageVehicles");
+                window.location.reload();
+
+
+
             } catch (error) {
                 console.log("Error deleting vehicle:", error);
             }
@@ -68,7 +86,7 @@ function EditCard(props) {
             <div className={classes.content}>
                 <form onSubmit={handleEditSubmit}>
                     <div className={classes.p}>
-                        <label htmlFor="year">Year:</label>
+                        <label htmlFor="year">Year: </label>
                         <input
                             type="text"
                             id="year"
@@ -78,7 +96,7 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.p}>
-                        <label htmlFor="make">Make:</label>
+                        <label htmlFor="make">Make: </label>
                         <input
                             type="text"
                             id="make"
@@ -88,8 +106,8 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.p}>
-                        <label htmlFor="model">Model:</label>
-                        <input
+                        <label htmlFor="model">Model: </label>
+                        <input className={classes.input}
                             type="text"
                             id="model"
                             name="model"
@@ -98,7 +116,7 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.p}>
-                        <label htmlFor="color">Color:</label>
+                        <label htmlFor="color">Color: </label>
                         <input
                             type="text"
                             id="color"
@@ -108,7 +126,7 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.p}>
-                        <label htmlFor="vin">VIN:</label>
+                        <label htmlFor="vin">VIN: </label>
                         <input
                             type="text"
                             id="vin"
@@ -118,7 +136,7 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.p}>
-                        <label htmlFor="purchasePrice">Purchase Price:</label>
+                        <label htmlFor="purchasePrice">Purchase Price: </label>
                         <input
                             type="text"
                             id="purchasePrice"
@@ -128,10 +146,10 @@ function EditCard(props) {
                         />
                     </div>
                     <div className={classes.actions}>
-                        <button type="submit">Save</button>
+                        <button type="button" onClick={saveHandler}>Save</button>
                     </div>
                     <div className={classes.actions}>
-                        <button type="submit" onClick={handleDelete}>Delete</button>
+                        <button type="button" onClick={handleDelete}>Delete</button>
                     </div>
                 </form>
             </div>

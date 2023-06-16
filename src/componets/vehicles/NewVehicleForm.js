@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import Card from "../ui/Card";
 import classes from "./css/NewVehicleForm.module.css";
 
@@ -25,9 +25,9 @@ function NewVehicleForm(props) {
 
         const vehicleData = {
             year: enteredYear,
-            make: { name: enteredMake }, // Modify this line
+            make:  enteredMake,
             purchasePrice: enteredPurchasePrice,
-            model: { name: enteredModel }, // Modify this line
+            model: enteredModel,
             color: enteredColor,
             vin: enteredVin,
         };

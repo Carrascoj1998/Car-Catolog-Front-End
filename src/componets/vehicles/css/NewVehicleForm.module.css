@@ -3,7 +3,8 @@
 }
 
 .control {
-    margin-bottom: 0.5rem;
+
+
 }
 
 .control label {
@@ -26,8 +27,6 @@
     margin-top: 1rem;
     text-align: right;
 }
-
-
 
 .actions button {
     font: inherit;

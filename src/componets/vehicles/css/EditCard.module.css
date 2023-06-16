@@ -15,11 +15,16 @@
 
 
 .p{
-    font-size: 1.25rem;
+    font-size: 1.60rem;
     color: #2c292b;
     margin: 0.5rem 0;
+    padding: 2px;
 
 
+}
+
+.input{
+    
 }
 
 
