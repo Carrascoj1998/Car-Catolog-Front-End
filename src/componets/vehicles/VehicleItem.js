@@ -22,7 +22,7 @@ function VehicleItem(props) {
 
     const toggleFavoriteStatusHandler = () => {
         if (isFavorite) {
-            favoritesCtx.removeFavorites(props.id);
+            favoritesCtx.removeFavorites(props.vin);
         } else {
             favoritesCtx.addFavorites({
                 id: props.id,

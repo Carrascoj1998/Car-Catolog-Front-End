@@ -1,4 +1,5 @@
 import {createContext, useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 const FavoritesContext = createContext({
     favorites: [],
@@ -17,11 +18,15 @@ const FavoritesContext = createContext({
         });
     }
 
-    function removeFavoriteHandler(vehicleId){
-        setUserFavorites((prevUserFavorites) =>{
-            return prevUserFavorites.filter(vehicle => vehicle.id !== vehicleId);
-        })
-    }
+     function removeFavoriteHandler(vehicleId) {
+         setUserFavorites((prevUserFavorites) => {
+             return prevUserFavorites.filter((vehicle) => vehicle.id !== vehicleId);
+
+
+         });
+
+         window.location.reload();
+     }
 
     function itemIsFavoriteHandler(vehicleId){
         return userFavorites.some(vehicle => vehicle.id === vehicleId);
