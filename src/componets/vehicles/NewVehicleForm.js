@@ -32,7 +32,6 @@ function NewVehicleForm(props) {
             vin: enteredVin,
         };
 
-
         props.onAddVehicle(vehicleData);
 
     }
